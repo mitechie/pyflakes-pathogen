@@ -39,10 +39,9 @@ Installation
 If you downloaded this from vim.org_, then just drop the contents of the zip
 file into ``~/.vim/ftplugin/python``.
 
-Otherwise, you'll need PyFlakes on your PYTHONPATH somewhere.  I recommend
-getting my PyFlakes_ fork, which uses the ``_ast`` module new to Python 2.5,
-and is faster and more current than PyFlakes' old usage of the deprecated
-``compiler`` module.
+Otherwise, if you're running "from source," you'll need PyFlakes on your
+PYTHONPATH somewhere.  I recommend getting my PyFlakes_ fork, which retains
+column number information and has therfore has more specific error locations.
 
 .. _vim.org: http://www.vim.org/scripts/script.php?script_id=2441
 .. _PyFlakes: http://github.com/kevinw/pyflakes
@@ -55,6 +54,15 @@ Hacking
   git clone git://github.com/kevinw/pyflakes-vim.git
   cd pyflakes-vim
   git clone git://github.com/kevinw/pyflakes.git
+
+Options
+-------
+
+Set this option to you vimrc file to disable quickfix support::
+    
+    let g:pyflakes_use_quickfix = 0
+
+The value is set to 1 by default.
 
 TODO
 ----
