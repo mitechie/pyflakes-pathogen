@@ -10,6 +10,10 @@
 "
 " Maintainer: Kevin Watters <kevin.watters@gmail.com>
 " Version: 0.1
+if !has('python')
+    " exit if python is not available.
+    finish
+endif
 
 if exists("b:did_pyflakes_plugin")
     finish " only load once
